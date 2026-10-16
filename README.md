@@ -21,7 +21,7 @@ Rode o comando no diretorio do projeto
 Rode o comando no diretorio do projeto
 <code>python manage.py runserver</code>
 
-Acesse via: http://127.0.0.0:8000
+Acesse via: http://127.0.0.1:8000
 
 <hr>
 
