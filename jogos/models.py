@@ -32,6 +32,7 @@ class Tecnico(models.Model):
     nome = models.CharField(max_length=50)
     email = models.EmailField(max_length=254)
     telefone = models.CharField(max_length=50)
+    equipe = models.OneToOneField("Equipe", on_delete=models.CASCADE, related_name='tecnico')
 
     class Meta:
         verbose_name = 'Tecnico'
@@ -45,6 +46,8 @@ class Atleta(models.Model):
     nome = models.CharField(max_length=50)
     matricula = models.CharField(max_length=50, unique=True)
     data_nascimento = models.DateField()
+    equipe = models.ForeignKey("Equipe", on_delete=models.PROTECT, related_name='atletas')
+    modalidades = models.ManyToManyField("Modalidade", null=True, blank=True, related_name='atletas')
 
     class Meta:
         verbose_name = 'Atleta'
