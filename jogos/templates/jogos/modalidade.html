@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Futsal | SGJogos{% endblock title %}
+{% block title %}{{modalidade}} | SGJogos{% endblock title %}
 
 {% block main %}
         <nav class="trilha"><a href="{% url "jogos:index" %}">Equipes</a> / {{modalidade}}</nav>
