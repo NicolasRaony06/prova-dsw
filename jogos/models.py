@@ -2,8 +2,12 @@ from django.db import models
 
 # Create your models here.
 class Modalidade(models.Model):
+    class Tipo(models.TextChoices):
+        COLETIVO = 'Coletivo'
+        INDIVIDUAL = 'Individual'
+
     nome = models.CharField(max_length=50, unique=True)
-    tipo = models.Choices('Coletiva', 'Individual')
+    tipo = models.CharField(choices=Tipo)
     max_atletas = models.PositiveIntegerField()
 
     class Meta:
