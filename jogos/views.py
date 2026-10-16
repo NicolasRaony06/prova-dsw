@@ -15,5 +15,10 @@ def equipe(request, id):
 
     return render(request, "jogos/equipe.html", {'equipe': equipe})
 
-def modalidade(request):
-    return render(request, "jogos/modalidade.html")
+def modalidade(request, id):
+    modalidade = get_object_or_404(
+        Modalidade,
+        id=id
+    )
+
+    return render(request, "jogos/modalidade.html", {'modalidade': modalidade})
