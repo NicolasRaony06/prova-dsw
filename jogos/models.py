@@ -3,8 +3,8 @@ from django.db import models
 # Create your models here.
 class Modalidade(models.Model):
     class Tipo(models.TextChoices):
-        COLETIVO = 'Coletivo'
-        INDIVIDUAL = 'Individual'
+        COLETIVO = 'coletivo'
+        INDIVIDUAL = 'individual'
 
     nome = models.CharField(max_length=50, unique=True)
     tipo = models.CharField(choices=Tipo)
